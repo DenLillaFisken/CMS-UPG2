@@ -1,0 +1,141 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+h1,
+h2,
+h3,
+p,
+a {
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+p{
+    font-size: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+.startPage {
+  height: 65vh;
+  margin-top: 8vh;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vh 0;
+}
+.headerLine {
+  width: 38%;
+  background-color: black;
+  height: 1px;
+}
+.portraitSub {
+  height: 60vh;
+  width: 30vw;
+}
+.dflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 0;
+}
+.menuChoises{
+    width: 23vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.loginStatus{
+    margin-left: 24vw;
+}
+.welcomeText{
+    margin-right: 3vw;
+}
+/*li {*/
+/*  margin: 3vh;*/
+/*  list-style: none;*/
+/*}*/
+.graphicSub {
+  width: 40vh;
+  height: 40vh;
+  padding: 5vh;
+  
+}
+.timelinePage {
+  height: 90vh;
+}
+.timeline {
+  width: 100%;
+  height: 45vh;
+  margin: 10vh 0;
+}
+.artPage {
+  margin: 8vh 0;
+  min-height: 65vh;
+}
+.filter a {
+  font-size: 16px;
+  margin-right: 2vw;
+}
+.art {
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.artImg{
+    margin-left: 0.75vw;
+    width: 18vw;
+    height: 38vh;
+    overflow: hidden;
+}
+.artHeader{
+    text-align: center;
+}
+.tutorialPage {
+    margin-top: 8vh;
+  height: 80vh;
+}
+.bigArt {
+  height: 65vh;
+}
+.centerText {
+  text-align: center;
+}
+.tutorialCol{
+    margin-top: 8vh;
+}
+.aboutMePage{
+    text-align: center;
+}
+.aboutMeText{
+    width: 20vw;
+}
+.footer{
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    bottom: 0;
+}
+.fotterLine{
+    height: 1px;
+    background-color: black;
+    margin: 3vh 0;
+}
+.footertext{
+    font-size: 16px;
+    margin-bottom: 1vh;
+}
+.aboutMeHeader{
+    margin-top: 8vh;
+}

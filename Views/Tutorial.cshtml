@@ -1,0 +1,17 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Tutorial>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+@{
+var videoAdress = @Model.Value("tutorialUrl");
+var videoAdressString = videoAdress.ToString();
+var splitVideoAdress = videoAdressString.Split("?v=");
+var videoID = splitVideoAdress[1];
+}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/@videoID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

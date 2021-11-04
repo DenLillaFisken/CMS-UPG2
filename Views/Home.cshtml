@@ -1,0 +1,19 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<!-- Startsida -->
+
+<div class="startPage">
+    <div class="dflex">
+        <img class="portraitSub" src="@Model.HomePageImg.Url()" alt="portrait">
+        
+        <div>
+            <p>
+                @Model.Value("homePageText")
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.StickerArtPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<!-- Mina konstverk -->
+<div class="artPage">
+    <div class="container">
+        <h2 class="aboutMeHeader">@Model.Value("PageTitle")</h2>
+        <!-- Filter -->
+        @{
+            var MyArt = Umbraco.Content(Guid.Parse("e2f1398d-1c95-40e8-9f82-5058fe023330"));
+        }
+        <div class="filter">
+            <a href="@Umbraco.Content("c93fe948-d306-4897-bd9a-7253b7b833fb").Url()">@MyArt.Value("filterName2")</a>
+            <a href="@Umbraco.Content("766c4933-9a4c-4da4-9e15-da0f5b82cd0d").Url()">@MyArt.Value("filterName3")</a>
+            <a href="@Umbraco.Content("e2f1398d-1c95-40e8-9f82-5058fe023330").Url()">@MyArt.Value("filterName4")</a>
+        </div> 
+        
+       
+         @{
+            var test = Umbraco.Content(Guid.Parse("e2f1398d-1c95-40e8-9f82-5058fe023330"))
+            .Children()
+            .Where(x => x.IsVisible() && x.Value<bool>("isStickerArt") == true)
+            .OrderByDescending(x => x.CreateDate);
+        }
+        
+        <div class="row">
+            @foreach (var item in test)
+            {
+                <div class="col-4 art">
+                    @{
+                        var image = item.Value<IPublishedContent>("artImage");
+                    }
+                    
+                    <a href="@item.Url()">
+                        <img class="artImg" src="@image.Url()" />
+                    </a>
+                    <p class="artHeader"><i>@item.Value("ArtTitle")</i></p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

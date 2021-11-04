@@ -1,0 +1,32 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Tutorials>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<!-- Tutorials/lärande -->
+<div class="tutorialPage">
+    <h2 class="aboutMeHeader">@Model.Value("PageTitle")</h2>
+    <div class="row">
+        
+        @{
+        	var selection = Umbraco.Content(Guid.Parse("c92359fb-b132-433b-a367-f927fa7d4210"))
+            .ChildrenOfType("tutorial")
+            .Where(x => x.IsVisible());
+        }
+        
+        @foreach (var item in selection)
+        {
+            var videoAdress = @item.Value("tutorialUrl");
+            var videoAdressString = videoAdress.ToString();
+            var splitVideoAdress = videoAdressString.Split("?v=");
+            var videoID = splitVideoAdress[1];
+            
+            <div class="col tutorialCol">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/@videoID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p><i>@item.Value("tutorialTitle")</i></p>
+            </div>
+        }
+    </div>
+</div>

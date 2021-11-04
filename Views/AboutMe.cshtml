@@ -1,0 +1,13 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutMe>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<!-- Om mig / tidslinje -->
+<h2 class="aboutMeHeader">@Model.Value("PageTitle")</h2>
+<div class="aboutMePage">
+    <img class="portraitSub" src="@Model.AboutMeImg.Url()" alt="portrait">
+
+    <p class="aboutMeText">@Model.Value("aboutMeText")</p>
+</div>
